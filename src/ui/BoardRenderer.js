@@ -7,6 +7,16 @@ export class BoardRenderer {
   render() {
     const boardElement = document.createElement('div');
     boardElement.className = 'board';
+
+    // Create cell elements for each cell in the board
+    for (let row = 0; row < this.board.rows; row++) {
+      for (let col = 0; col < this.board.cols; col++) {
+        const cellElement = document.createElement('div');
+        cellElement.className = 'cell';
+        boardElement.appendChild(cellElement);
+      }
+    }
+
     this.container.appendChild(boardElement);
   }
 }

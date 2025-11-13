@@ -21,5 +21,12 @@ describe('BoardRenderer', () => {
       const boardElement = container.querySelector('.board');
       expect(boardElement).toBeTruthy();
     });
+
+    it('should render correct number of cell elements', () => {
+      renderer.render();
+
+      const cells = container.querySelectorAll('.cell');
+      expect(cells.length).toBe(9); // 3x3 board = 9 cells
+    });
   });
 });
