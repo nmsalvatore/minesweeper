@@ -8,6 +8,10 @@ export class BoardRenderer {
     const boardElement = document.createElement('div');
     boardElement.className = 'board';
 
+    // Set CSS grid layout
+    boardElement.style.gridTemplateRows = `repeat(${this.board.rows}, 1fr)`;
+    boardElement.style.gridTemplateColumns = `repeat(${this.board.cols}, 1fr)`;
+
     // Create cell elements for each cell in the board
     for (let row = 0; row < this.board.rows; row++) {
       for (let col = 0; col < this.board.cols; col++) {

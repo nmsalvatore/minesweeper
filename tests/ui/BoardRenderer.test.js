@@ -116,4 +116,14 @@ describe('BoardRenderer', () => {
       expect(flaggedCell.textContent).toBe('🚩');
     });
   });
+
+  describe('grid layout', () => {
+    it('should set CSS grid-template properties based on board dimensions', () => {
+      renderer.render();
+
+      const boardElement = container.querySelector('.board');
+      expect(boardElement.style.gridTemplateRows).toBe('repeat(3, 1fr)');
+      expect(boardElement.style.gridTemplateColumns).toBe('repeat(3, 1fr)');
+    });
+  });
 });
