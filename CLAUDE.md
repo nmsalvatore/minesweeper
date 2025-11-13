@@ -109,49 +109,93 @@ All RED-GREEN cycles are logged to `tdd-log.json` with:
 - Implementation notes
 - Current test status
 
+### Planning & Progress Workflow
+- **PLAN.md**: Detailed test-by-test plan for complex features
+- **Update PLAN.md**: After each phase completes, mark tests as complete
+- **Feature Phases**: Break large features into phases (A, B, C, D)
+- **Commit After Completion**: Update PLAN.md and commit when phase completes
+- **Benefits**: Clear roadmap, track progress, easy to resume work
+
 ## Current Status
 
 ### Completed ✅
 - [x] **Project initialization** - Vite, Vitest, folder structure, git workflow
 - [x] **Phase 1: Core Data Structures**
   - Cell class (5 tests) - position, state, reveal, flag, setMine, setAdjacentMines
-  - Board class (9 tests) - grid initialization, getCell, getNeighbors, placeMines, calculateAdjacentMines
-- [x] **Phase 2: Game Actions**
-  - revealCell with flood-fill algorithm (5 tests)
-  - isGameWon / isGameLost detection
+  - Board class (14 tests) - grid initialization, getCell, getNeighbors, placeMines, calculateAdjacentMines, revealCell with flood-fill, win/lose detection
 - [x] **Phase 3: Game Controller**
   - GameController class (4 tests) - orchestrates game flow
   - First-click guarantee (board regeneration)
   - Game state management (idle → playing → won/lost)
   - handleCellClick and handleCellRightClick
   - Clean API for UI layer via getGameState
+- [x] **Phase 4: BoardRenderer (UI Layer)**
+  - BoardRenderer class (12 tests) - complete with TDD
+  - **Phase A**: Cell state classes (hidden, revealed, flagged)
+  - **Phase B**: Cell content display (numbers, mines 💣, flags 🚩)
+  - **Phase C**: CSS grid layout (responsive)
+  - **Phase D**: Re-rendering support for state updates
 
-**Total: 23 tests passing | 23 TDD cycles logged**
+**Total: 39 tests passing | 35 TDD cycles logged**
 
-**All core game logic complete and tested!** 🎉
+**All core game logic + BoardRenderer complete and tested!** 🎉
 
-### In Progress 🚧
-- [ ] **Phase 4: UI Layer**
-  - BoardRenderer - render grid to DOM
-  - InputHandler - mouse/touch events
-  - CSS styling and responsive design
+### Next Steps 🚀
+**Professional Strategy**: Core business logic is fully tested. Now build thin UI layer pragmatically:
 
-### Planned 📋
-- [ ] **Phase 5: Enhancements** (optional)
-  - Timer
-  - Mine counter
-  - Difficulty levels
-  - High scores
+1. **Create Playable Prototype** (Quick iteration to validate UX)
+   - [ ] Build InputHandler - simple event delegation (clicks → GameController)
+   - [ ] Create index.html - basic structure
+   - [ ] Add main.js - wire BoardRenderer + InputHandler + GameController
+   - [ ] Add CSS - styling for playable game
+   - [ ] Manual testing - play the game, find issues
+
+2. **Iterate & Polish**
+   - [ ] Fix UX issues discovered during play
+   - [ ] Improve visual design
+   - [ ] Mobile touch support (long-press for flags)
+   - [ ] Add missing features as needed
+
+3. **Optional Enhancements**
+   - [ ] Timer
+   - [ ] Mine counter
+   - [ ] Difficulty levels (beginner/intermediate/expert)
+   - [ ] High scores
+
+### Development Philosophy
+- ✅ **Use TDD for complex business logic** (Cell, Board, GameController)
+- ✅ **Use TDD for complex UI rendering** (BoardRenderer with state management)
+- 🎯 **Build thin integration layers quickly** (InputHandler, main.js)
+- 🎯 **Validate with manual testing** - get to playable ASAP
+- 🎯 **Add tests when bugs are found** - let real usage drive test additions
 
 ## Running the Project
+
+### Current Status: Tests Only
+Right now the game is **fully functional at the logic level** but not yet playable in a browser. All 39 tests pass!
+
 ```bash
 # Install dependencies
 npm install
 
-# Run tests in watch mode
+# Run all tests
+npm test -- --run
+
+# Run tests in watch mode (auto re-run on changes)
 npm test
 
-# Run dev server
+# Run specific test file
+npm test tests/ui/BoardRenderer.test.js
+
+# View test coverage
+npm test -- --coverage
+```
+
+### Future: Playable Game
+Once InputHandler, HTML, CSS, and main.js are built:
+
+```bash
+# Run dev server to play in browser
 npm run dev
 
 # Build for production
