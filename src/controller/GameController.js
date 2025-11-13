@@ -50,6 +50,15 @@ export class GameController {
     }
   }
 
+  handleCellRightClick(row, col) {
+    if (this.status !== 'playing') {
+      return;
+    }
+
+    const cell = this.board.getCell(row, col);
+    cell.toggleFlag();
+  }
+
   getGameState() {
     return {
       board: this.board,

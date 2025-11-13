@@ -43,4 +43,16 @@ describe('GameController', () => {
       expect(controller.status).not.toBe('lost');
     });
   });
+
+  describe('handleCellRightClick', () => {
+    it('should toggle flag on cell', () => {
+      const controller = new GameController();
+      controller.startNewGame(3, 3, 2);
+
+      controller.handleCellRightClick(0, 0);
+
+      const cell = controller.board.getCell(0, 0);
+      expect(cell.isFlagged).toBe(true);
+    });
+  });
 });

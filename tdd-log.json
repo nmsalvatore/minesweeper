@@ -200,6 +200,15 @@
       "greenTimestamp": "2025-01-13T06:51:29Z",
       "notes": "Implemented first-click guarantee - regenerates board until clicked cell is not a mine",
       "status": "passing"
+    },
+    {
+      "id": 23,
+      "module": "GameController",
+      "description": "handleCellRightClick should toggle flag on cell",
+      "redTimestamp": "2025-01-13T06:52:10Z",
+      "greenTimestamp": "2025-01-13T06:52:29Z",
+      "notes": "Implemented handleCellRightClick to toggle flags",
+      "status": "passing"
     }
   ]
 }
