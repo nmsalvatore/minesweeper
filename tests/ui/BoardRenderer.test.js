@@ -83,5 +83,16 @@ describe('BoardRenderer', () => {
       const cellElement = container.querySelector('[data-row="1"][data-col="1"]');
       expect(cellElement.textContent).toBe('3');
     });
+
+    it('should display empty content on revealed cells with 0 adjacent mines', () => {
+      // Set up a cell with 0 adjacent mines
+      const cell = board.getCell(2, 2);
+      cell.setAdjacentMines(0);
+      cell.reveal();
+      renderer.render();
+
+      const cellElement = container.querySelector('[data-row="2"][data-col="2"]');
+      expect(cellElement.textContent).toBe('');
+    });
   });
 });

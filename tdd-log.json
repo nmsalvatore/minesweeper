@@ -272,6 +272,15 @@
       "greenTimestamp": "2025-01-13T07:18:37Z",
       "notes": "Added content display - show adjacentMines count for revealed cells with adjacentMines > 0",
       "status": "passing"
+    },
+    {
+      "id": 31,
+      "module": "BoardRenderer",
+      "description": "should display empty content on revealed cells with 0 adjacent mines",
+      "redTimestamp": "2025-01-13T07:19:08Z",
+      "greenTimestamp": "2025-01-13T07:19:08Z",
+      "notes": "Already green - previous implementation only adds content when adjacentMines > 0",
+      "status": "passing"
     }
   ]
 }
