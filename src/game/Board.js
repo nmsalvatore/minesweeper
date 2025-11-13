@@ -19,6 +19,9 @@ export class Board {
   }
 
   getCell(row, col) {
+    if (row < 0 || row >= this.rows || col < 0 || col >= this.cols) {
+      return null;
+    }
     return this.grid[row][col];
   }
 }

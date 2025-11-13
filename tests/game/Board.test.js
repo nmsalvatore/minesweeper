@@ -41,5 +41,14 @@ describe('Board', () => {
       expect(cell.row).toBe(1);
       expect(cell.col).toBe(2);
     });
+
+    it('should return null for out-of-bounds position', () => {
+      const board = new Board(3, 3);
+
+      expect(board.getCell(-1, 0)).toBeNull();
+      expect(board.getCell(0, -1)).toBeNull();
+      expect(board.getCell(3, 0)).toBeNull();
+      expect(board.getCell(0, 3)).toBeNull();
+    });
   });
 });

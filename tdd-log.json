@@ -83,6 +83,15 @@
       "greenTimestamp": "2025-01-13T06:24:41Z",
       "notes": "Added getCell method to retrieve cell by row and col",
       "status": "passing"
+    },
+    {
+      "id": 10,
+      "module": "Board",
+      "description": "getCell should return null for out-of-bounds position",
+      "redTimestamp": "2025-01-13T06:25:10Z",
+      "greenTimestamp": "2025-01-13T06:25:23Z",
+      "notes": "Added bounds checking to getCell method",
+      "status": "passing"
     }
   ]
 }
