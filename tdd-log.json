@@ -173,6 +173,15 @@
       "greenTimestamp": "2025-01-13T06:40:13Z",
       "notes": "Validates isGameLost returns false when game is still in progress",
       "status": "passing"
+    },
+    {
+      "id": 20,
+      "module": "GameController",
+      "description": "should initialize a new game with specified dimensions and mine count",
+      "redTimestamp": "2025-01-13T06:48:18Z",
+      "greenTimestamp": "2025-01-13T06:48:35Z",
+      "notes": "Created GameController with startNewGame and getGameState methods",
+      "status": "passing"
     }
   ]
 }
