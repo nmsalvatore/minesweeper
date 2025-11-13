@@ -263,6 +263,15 @@
       "greenTimestamp": "2025-01-13T07:17:32Z",
       "notes": "Added check for cell.isFlagged to apply cell-flagged class",
       "status": "passing"
+    },
+    {
+      "id": 30,
+      "module": "BoardRenderer",
+      "description": "should display adjacent mine count on revealed cells with mines nearby",
+      "redTimestamp": "2025-01-13T07:18:16Z",
+      "greenTimestamp": "2025-01-13T07:18:37Z",
+      "notes": "Added content display - show adjacentMines count for revealed cells with adjacentMines > 0",
+      "status": "passing"
     }
   ]
 }

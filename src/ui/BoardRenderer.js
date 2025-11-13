@@ -28,6 +28,11 @@ export class BoardRenderer {
           cellElement.classList.add('cell-flagged');
         }
 
+        // Add cell content
+        if (cell.isRevealed && cell.adjacentMines > 0) {
+          cellElement.textContent = cell.adjacentMines;
+        }
+
         boardElement.appendChild(cellElement);
       }
     }

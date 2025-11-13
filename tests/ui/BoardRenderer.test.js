@@ -71,4 +71,17 @@ describe('BoardRenderer', () => {
       expect(flaggedCell.classList.contains('cell-flagged')).toBe(true);
     });
   });
+
+  describe('cell content display', () => {
+    it('should display adjacent mine count on revealed cells with mines nearby', () => {
+      // Set up a cell with adjacent mines
+      const cell = board.getCell(1, 1);
+      cell.setAdjacentMines(3);
+      cell.reveal();
+      renderer.render();
+
+      const cellElement = container.querySelector('[data-row="1"][data-col="1"]');
+      expect(cellElement.textContent).toBe('3');
+    });
+  });
 });
