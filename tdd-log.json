@@ -245,6 +245,15 @@
       "greenTimestamp": "2025-01-13T07:15:55Z",
       "notes": "Added cell-hidden class for unrevealed cells by checking cell.isRevealed",
       "status": "passing"
+    },
+    {
+      "id": 28,
+      "module": "BoardRenderer",
+      "description": "should add cell-revealed class to revealed cells",
+      "redTimestamp": "2025-01-13T07:16:24Z",
+      "greenTimestamp": "2025-01-13T07:16:45Z",
+      "notes": "Added else branch to add cell-revealed class when cell.isRevealed is true",
+      "status": "passing"
     }
   ]
 }

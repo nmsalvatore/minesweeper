@@ -20,6 +20,8 @@ export class BoardRenderer {
         // Add state classes
         if (!cell.isRevealed) {
           cellElement.classList.add('cell-hidden');
+        } else {
+          cellElement.classList.add('cell-revealed');
         }
 
         boardElement.appendChild(cellElement);

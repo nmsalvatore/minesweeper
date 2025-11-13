@@ -51,5 +51,15 @@ describe('BoardRenderer', () => {
         expect(cell.classList.contains('cell-hidden')).toBe(true);
       });
     });
+
+    it('should add cell-revealed class to revealed cells', () => {
+      // Reveal a cell
+      board.getCell(1, 1).reveal();
+      renderer.render();
+
+      const revealedCell = container.querySelector('[data-row="1"][data-col="1"]');
+      expect(revealedCell.classList.contains('cell-revealed')).toBe(true);
+      expect(revealedCell.classList.contains('cell-hidden')).toBe(false);
+    });
   });
 });
