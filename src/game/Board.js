@@ -67,4 +67,9 @@ export class Board {
       }
     }
   }
+
+  revealCell(row, col) {
+    const cell = this.getCell(row, col);
+    cell.reveal();
+  }
 }

@@ -128,6 +128,15 @@
       "greenTimestamp": "2025-01-13T06:28:53Z",
       "notes": "Implemented adjacent mine calculation using getNeighbors and filter - Board class core complete!",
       "status": "passing"
+    },
+    {
+      "id": 15,
+      "module": "Board",
+      "description": "revealCell should reveal a non-mine cell",
+      "redTimestamp": "2025-01-13T06:36:49Z",
+      "greenTimestamp": "2025-01-13T06:37:13Z",
+      "notes": "Added revealCell method that calls cell.reveal()",
+      "status": "passing"
     }
   ]
 }

@@ -111,4 +111,14 @@ describe('Board', () => {
       expect(board.getCell(2, 2).adjacentMines).toBe(0);
     });
   });
+
+  describe('revealCell', () => {
+    it('should reveal a non-mine cell', () => {
+      const board = new Board(3, 3);
+
+      board.revealCell(1, 1);
+
+      expect(board.getCell(1, 1).isRevealed).toBe(true);
+    });
+  });
 });
