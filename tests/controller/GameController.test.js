@@ -28,5 +28,19 @@ describe('GameController', () => {
       const cell = controller.board.getCell(2, 2);
       expect(cell.isRevealed).toBe(true);
     });
+
+    it('should ensure first click never hits a mine', () => {
+      const controller = new GameController();
+      // Create heavily mined board to test first-click guarantee
+      controller.startNewGame(3, 3, 8); // 8 mines on 3x3 board
+
+      // Click on a cell - should never be a mine
+      controller.handleCellClick(1, 1);
+
+      const cell = controller.board.getCell(1, 1);
+      expect(cell.isMine).toBe(false);
+      expect(cell.isRevealed).toBe(true);
+      expect(controller.status).not.toBe('lost');
+    });
   });
 });

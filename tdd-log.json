@@ -191,6 +191,15 @@
       "greenTimestamp": "2025-01-13T06:49:46Z",
       "notes": "Implemented handleCellClick with win/lose detection",
       "status": "passing"
+    },
+    {
+      "id": 22,
+      "module": "GameController",
+      "description": "should ensure first click never hits a mine",
+      "redTimestamp": "2025-01-13T06:51:07Z",
+      "greenTimestamp": "2025-01-13T06:51:29Z",
+      "notes": "Implemented first-click guarantee - regenerates board until clicked cell is not a mine",
+      "status": "passing"
     }
   ]
 }
