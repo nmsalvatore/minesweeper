@@ -56,4 +56,15 @@ export class Board {
       }
     }
   }
+
+  calculateAdjacentMines() {
+    for (let row = 0; row < this.rows; row++) {
+      for (let col = 0; col < this.cols; col++) {
+        const cell = this.getCell(row, col);
+        const neighbors = this.getNeighbors(row, col);
+        const mineCount = neighbors.filter(neighbor => neighbor.isMine).length;
+        cell.setAdjacentMines(mineCount);
+      }
+    }
+  }
 }

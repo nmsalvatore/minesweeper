@@ -88,4 +88,27 @@ describe('Board', () => {
       expect(mineCount).toBe(5);
     });
   });
+
+  describe('calculateAdjacentMines', () => {
+    it('should set correct adjacent mine counts', () => {
+      const board = new Board(3, 3);
+      // Manually place mines in known positions
+      // Layout: M M .
+      //         . . .
+      //         . . .
+      board.getCell(0, 0).setMine();
+      board.getCell(0, 1).setMine();
+
+      board.calculateAdjacentMines();
+
+      // Cell at (0, 2) has 1 adjacent mine (0,1)
+      expect(board.getCell(0, 2).adjacentMines).toBe(1);
+      // Cell at (1, 0) has 2 adjacent mines (0,0 and 0,1)
+      expect(board.getCell(1, 0).adjacentMines).toBe(2);
+      // Cell at (1, 1) has 2 adjacent mines (0,0 and 0,1)
+      expect(board.getCell(1, 1).adjacentMines).toBe(2);
+      // Cell at (2, 2) has 0 adjacent mines
+      expect(board.getCell(2, 2).adjacentMines).toBe(0);
+    });
+  });
 });

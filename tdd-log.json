@@ -119,6 +119,15 @@
       "greenTimestamp": "2025-01-13T06:27:37Z",
       "notes": "Implemented random mine placement with duplicate prevention",
       "status": "passing"
+    },
+    {
+      "id": 14,
+      "module": "Board",
+      "description": "calculateAdjacentMines should set correct counts",
+      "redTimestamp": "2025-01-13T06:28:14Z",
+      "greenTimestamp": "2025-01-13T06:28:53Z",
+      "notes": "Implemented adjacent mine calculation using getNeighbors and filter - Board class core complete!",
+      "status": "passing"
     }
   ]
 }
