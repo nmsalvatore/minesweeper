@@ -290,6 +290,15 @@
       "greenTimestamp": "2025-01-13T07:20:01Z",
       "notes": "Added mine symbol display - check cell.isMine and show 💣 for revealed mines",
       "status": "passing"
+    },
+    {
+      "id": 33,
+      "module": "BoardRenderer",
+      "description": "should display flag symbol on flagged cells",
+      "redTimestamp": "2025-01-13T07:20:32Z",
+      "greenTimestamp": "2025-01-13T07:20:54Z",
+      "notes": "Added flag symbol display - check cell.isFlagged first and show 🚩",
+      "status": "passing"
     }
   ]
 }

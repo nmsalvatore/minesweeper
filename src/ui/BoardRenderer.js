@@ -29,7 +29,9 @@ export class BoardRenderer {
         }
 
         // Add cell content
-        if (cell.isRevealed) {
+        if (cell.isFlagged) {
+          cellElement.textContent = '🚩';
+        } else if (cell.isRevealed) {
           if (cell.isMine) {
             cellElement.textContent = '💣';
           } else if (cell.adjacentMines > 0) {

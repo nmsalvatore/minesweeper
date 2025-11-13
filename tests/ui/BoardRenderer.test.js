@@ -105,5 +105,15 @@ describe('BoardRenderer', () => {
       const mineCell = container.querySelector('[data-row="0"][data-col="0"]');
       expect(mineCell.textContent).toBe('💣');
     });
+
+    it('should display flag symbol on flagged cells', () => {
+      // Flag a cell
+      const cell = board.getCell(1, 0);
+      cell.toggleFlag();
+      renderer.render();
+
+      const flaggedCell = container.querySelector('[data-row="1"][data-col="0"]');
+      expect(flaggedCell.textContent).toBe('🚩');
+    });
   });
 });
