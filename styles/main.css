@@ -167,6 +167,12 @@ h1::before {
     font-size: 20px;
 }
 
+/* Revealed mines (not the hit mine) */
+.cell-mine {
+    background: rgba(191, 97, 106, 0.2);  /* Subtle red tint */
+    border: 1px solid var(--nord-accent);
+}
+
 /* Hit mine - red background */
 .cell-hit-mine {
     background: var(--nord-red) !important;
