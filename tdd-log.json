@@ -326,6 +326,15 @@
       "greenTimestamp": "2025-01-13T19:02:22Z",
       "notes": "Created InputHandler class with constructor storing container and gameController",
       "status": "passing"
+    },
+    {
+      "id": 37,
+      "module": "InputHandler",
+      "description": "should attach click event listener to container",
+      "redTimestamp": "2025-01-13T19:02:55Z",
+      "greenTimestamp": "2025-01-13T19:03:15Z",
+      "notes": "Added click event listener in constructor with handleClick method",
+      "status": "passing"
     }
   ]
 }

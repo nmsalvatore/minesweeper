@@ -29,4 +29,13 @@ describe('InputHandler', () => {
     expect(inputHandler.container).toBe(container);
     expect(inputHandler.gameController).toBe(mockGameController);
   });
+
+  // Test 37: Should attach click event listener to container
+  it('should attach click event listener to container', () => {
+    const addEventListenerSpy = vi.spyOn(container, 'addEventListener');
+
+    new InputHandler(container, mockGameController);
+
+    expect(addEventListenerSpy).toHaveBeenCalledWith('click', expect.any(Function));
+  });
 });
