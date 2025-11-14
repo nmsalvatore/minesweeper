@@ -135,19 +135,23 @@ All RED-GREEN cycles are logged to `tdd-log.json` with:
   - **Phase B**: Cell content display (numbers, mines 💣, flags 🚩)
   - **Phase C**: CSS grid layout (responsive)
   - **Phase D**: Re-rendering support for state updates
+- [x] **Phase 5: InputHandler (UI Layer)**
+  - InputHandler class (8 tests) - complete with TDD
+  - **Phase A**: Basic setup & click handling
+  - **Phase B**: Right-click handling with preventDefault
+  - **Phase C**: Edge cases for non-cell elements
 
-**Total: 39 tests passing | 35 TDD cycles logged**
+**Total: 47 tests passing | 43 TDD cycles logged**
 
-**All core game logic + BoardRenderer complete and tested!** 🎉
+**All core game logic + UI event handling complete and tested!** 🎉
 
 ### Next Steps 🚀
-**Professional Strategy**: Core business logic is fully tested. Now build thin UI layer pragmatically:
+**Professional Strategy**: Core business logic and event handling complete. Now wire everything together:
 
 1. **Create Playable Prototype** (Quick iteration to validate UX)
-   - [ ] Build InputHandler - simple event delegation (clicks → GameController)
-   - [ ] Create index.html - basic structure
-   - [ ] Add main.js - wire BoardRenderer + InputHandler + GameController
-   - [ ] Add CSS - styling for playable game
+   - [x] Build InputHandler - simple event delegation (clicks → GameController)
+   - [ ] Wire main.js - connect BoardRenderer + InputHandler + GameController
+   - [ ] Add board/cell CSS - styling for playable game
    - [ ] Manual testing - play the game, find issues
 
 2. **Iterate & Polish**
@@ -171,8 +175,8 @@ All RED-GREEN cycles are logged to `tdd-log.json` with:
 
 ## Running the Project
 
-### Current Status: Tests Only
-Right now the game is **fully functional at the logic level** but not yet playable in a browser. All 39 tests pass!
+### Current Status: Ready for Integration
+Right now the game is **fully functional at the logic level** with complete event handling. All 47 tests pass! Just need to wire everything together in main.js and add CSS.
 
 ```bash
 # Install dependencies
