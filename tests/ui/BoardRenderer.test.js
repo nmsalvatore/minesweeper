@@ -115,6 +115,35 @@ describe('BoardRenderer', () => {
       const flaggedCell = container.querySelector('[data-row="1"][data-col="0"]');
       expect(flaggedCell.textContent).toBe('⚑');
     });
+
+    it('should add cell-mine class to revealed mines', () => {
+      // Set up a mine cell and reveal it
+      const cell = board.getCell(0, 0);
+      cell.setMine();
+      cell.reveal();
+      renderer.render();
+
+      const mineCell = container.querySelector('[data-row="0"][data-col="0"]');
+      expect(mineCell.classList.contains('cell-mine')).toBe(true);
+    });
+
+    it('should add cell-hit-mine class to the specific mine that was hit', () => {
+      // Set up multiple mines and reveal them
+      board.getCell(0, 0).setMine();
+      board.getCell(1, 1).setMine();
+      board.getCell(0, 0).reveal();
+      board.getCell(1, 1).reveal();
+
+      // Render with hitMineCell pointing to (1, 1)
+      renderer.render({ row: 1, col: 1 });
+
+      const hitMine = container.querySelector('[data-row="1"][data-col="1"]');
+      const otherMine = container.querySelector('[data-row="0"][data-col="0"]');
+
+      expect(hitMine.classList.contains('cell-hit-mine')).toBe(true);
+      expect(otherMine.classList.contains('cell-hit-mine')).toBe(false);
+      expect(otherMine.classList.contains('cell-mine')).toBe(true);
+    });
   });
 
   describe('grid layout', () => {

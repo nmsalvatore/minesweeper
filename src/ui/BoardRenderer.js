@@ -38,12 +38,17 @@ export class BoardRenderer {
           cellElement.classList.add('cell-flagged');
         }
 
-        // Mark the hit mine (the one that ended the game)
-        if (this.hitMineCell &&
-            this.hitMineCell.row === row &&
-            this.hitMineCell.col === col &&
-            cell.isMine && cell.isRevealed) {
-          cellElement.classList.add('cell-hit-mine');
+        // Mark revealed mines
+        if (cell.isMine && cell.isRevealed) {
+          // Check if this is the hit mine (the one that ended the game)
+          if (this.hitMineCell &&
+              this.hitMineCell.row === row &&
+              this.hitMineCell.col === col) {
+            cellElement.classList.add('cell-hit-mine');
+          } else {
+            // Other revealed mines get the cell-mine class
+            cellElement.classList.add('cell-mine');
+          }
         }
 
         // Add cell content
