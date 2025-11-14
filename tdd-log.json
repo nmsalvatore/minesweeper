@@ -389,6 +389,42 @@
       "greenTimestamp": "2025-01-13T19:07:38Z",
       "notes": "Already green - handleContextMenu checks for null row/col before calling gameController",
       "status": "passing"
+    },
+    {
+      "id": 44,
+      "module": "InputHandler",
+      "description": "should ignore clicks on elements with invalid data-row (NaN injection)",
+      "redTimestamp": "2025-01-13T19:36:09Z",
+      "greenTimestamp": "2025-01-13T19:37:09Z",
+      "notes": "Fixed with _getCellCoordinates helper - validates parseInt result with isNaN check. Security vulnerability resolved!",
+      "status": "passing"
+    },
+    {
+      "id": 45,
+      "module": "InputHandler",
+      "description": "should ignore clicks on elements with empty data attributes",
+      "redTimestamp": "2025-01-13T19:36:09Z",
+      "greenTimestamp": "2025-01-13T19:37:09Z",
+      "notes": "Fixed with _getCellCoordinates helper - empty strings now rejected by isNaN validation",
+      "status": "passing"
+    },
+    {
+      "id": 46,
+      "module": "InputHandler",
+      "description": "should ignore clicks on elements with only partial attributes",
+      "redTimestamp": "2025-01-13T19:36:09Z",
+      "greenTimestamp": "2025-01-13T19:36:09Z",
+      "notes": "Already green - null check handles missing data-col attribute",
+      "status": "passing"
+    },
+    {
+      "id": 47,
+      "module": "InputHandler",
+      "description": "should remove event listeners when destroy() is called",
+      "redTimestamp": "2025-01-13T19:36:09Z",
+      "greenTimestamp": "2025-01-13T19:37:09Z",
+      "notes": "Added destroy() method with removeEventListener for both click and contextmenu. Prevents memory leaks!",
+      "status": "passing"
     }
   ]
 }

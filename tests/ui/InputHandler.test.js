@@ -139,4 +139,74 @@ describe('InputHandler', () => {
     // Should not call handleCellRightClick
     expect(mockGameController.handleCellRightClick).not.toHaveBeenCalled();
   });
+
+  // Test 44: Should ignore clicks on elements with invalid data-row (NaN injection)
+  it('should ignore clicks on elements with invalid data-row (NaN injection)', () => {
+    new InputHandler(container, mockGameController);
+
+    // Create element with invalid data-row
+    const invalidElement = document.createElement('div');
+    invalidElement.setAttribute('data-row', 'invalid');
+    invalidElement.setAttribute('data-col', '0');
+    container.appendChild(invalidElement);
+
+    // Simulate click
+    invalidElement.click();
+
+    // Should not call handleCellClick with NaN
+    expect(mockGameController.handleCellClick).not.toHaveBeenCalled();
+  });
+
+  // Test 45: Should ignore clicks on elements with empty data attributes
+  it('should ignore clicks on elements with empty data attributes', () => {
+    new InputHandler(container, mockGameController);
+
+    // Create element with empty data-row
+    const emptyElement = document.createElement('div');
+    emptyElement.setAttribute('data-row', '');
+    emptyElement.setAttribute('data-col', '5');
+    container.appendChild(emptyElement);
+
+    // Simulate click
+    emptyElement.click();
+
+    // Should not call handleCellClick
+    expect(mockGameController.handleCellClick).not.toHaveBeenCalled();
+  });
+
+  // Test 46: Should ignore clicks on elements with only partial attributes
+  it('should ignore clicks on elements with only partial attributes', () => {
+    new InputHandler(container, mockGameController);
+
+    // Create element with only data-row (missing data-col)
+    const partialElement = document.createElement('div');
+    partialElement.setAttribute('data-row', '2');
+    container.appendChild(partialElement);
+
+    // Simulate click
+    partialElement.click();
+
+    // Should not call handleCellClick
+    expect(mockGameController.handleCellClick).not.toHaveBeenCalled();
+  });
+
+  // Test 47: Should remove event listeners when destroy() is called
+  it('should remove event listeners when destroy() is called', () => {
+    const inputHandler = new InputHandler(container, mockGameController);
+
+    // Create a cell element
+    const cellElement = document.createElement('div');
+    cellElement.setAttribute('data-row', '1');
+    cellElement.setAttribute('data-col', '1');
+    container.appendChild(cellElement);
+
+    // Call destroy
+    inputHandler.destroy();
+
+    // Simulate click after destroy
+    cellElement.click();
+
+    // Should not call handleCellClick after destroy
+    expect(mockGameController.handleCellClick).not.toHaveBeenCalled();
+  });
 });
