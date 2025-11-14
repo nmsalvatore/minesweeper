@@ -353,6 +353,15 @@
       "greenTimestamp": "2025-01-13T19:04:57Z",
       "notes": "Added contextmenu event listener in constructor with handleContextMenu method",
       "status": "passing"
+    },
+    {
+      "id": 40,
+      "module": "InputHandler",
+      "description": "should call gameController.handleCellRightClick with correct row/col on cell right-click",
+      "redTimestamp": "2025-01-13T19:05:23Z",
+      "greenTimestamp": "2025-01-13T19:05:43Z",
+      "notes": "Implemented handleContextMenu to extract data-row/data-col attributes and call gameController.handleCellRightClick",
+      "status": "passing"
     }
   ]
 }

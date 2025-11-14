@@ -63,4 +63,24 @@ describe('InputHandler', () => {
 
     expect(addEventListenerSpy).toHaveBeenCalledWith('contextmenu', expect.any(Function));
   });
+
+  // Test 40: Should call gameController.handleCellRightClick with correct row/col on cell right-click
+  it('should call gameController.handleCellRightClick with correct row/col on cell right-click', () => {
+    new InputHandler(container, mockGameController);
+
+    // Create a cell element
+    const cellElement = document.createElement('div');
+    cellElement.setAttribute('data-row', '1');
+    cellElement.setAttribute('data-col', '4');
+    container.appendChild(cellElement);
+
+    // Simulate right-click (contextmenu event) on the cell
+    const contextMenuEvent = new dom.window.MouseEvent('contextmenu', {
+      bubbles: true,
+      cancelable: true
+    });
+    cellElement.dispatchEvent(contextMenuEvent);
+
+    expect(mockGameController.handleCellRightClick).toHaveBeenCalledWith(1, 4);
+  });
 });
