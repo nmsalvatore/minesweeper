@@ -1,23 +1,27 @@
 {
-  "name": "minesweeper",
-  "version": "1.0.0",
-  "description": "Modern Minesweeper web app with TDD",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage"
-  },
-  "keywords": ["minesweeper", "game", "tdd"],
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "vite": "^5.0.0",
-    "vitest": "^1.0.0",
-    "jsdom": "^23.0.0",
-    "@vitest/ui": "^1.0.0"
-  }
+    "name": "monosweeper",
+    "version": "1.0.0",
+    "description": "Modern Minesweeper web app",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "test": "vitest",
+        "test:ui": "vitest --ui",
+        "test:coverage": "vitest --coverage"
+    },
+    "keywords": [
+        "monosweeper",
+        "minesweeper",
+        "game"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "vite": "^5.0.0",
+        "vitest": "^1.0.0",
+        "jsdom": "^23.0.0",
+        "@vitest/ui": "^1.0.0"
+    }
 }

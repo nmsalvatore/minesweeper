@@ -1,430 +1,430 @@
 {
-  "project": "Minesweeper",
-  "started": "2025-01-13",
-  "description": "TDD progress log tracking RED-GREEN cycles",
-  "tests": [
-    {
-      "id": 1,
-      "module": "Cell",
-      "description": "toggleFlag should flag an unflagged cell",
-      "redTimestamp": "2025-01-13T06:12:04Z",
-      "greenTimestamp": "2025-01-13T06:12:04Z",
-      "notes": "Already green - toggleFlag implemented in previous test",
-      "status": "passing"
-    },
-    {
-      "id": 2,
-      "module": "Cell",
-      "description": "toggleFlag should unflag a flagged cell",
-      "redTimestamp": "2025-01-13T06:12:28Z",
-      "greenTimestamp": "2025-01-13T06:12:28Z",
-      "notes": "Already green - toggleFlag already toggles correctly",
-      "status": "passing"
-    },
-    {
-      "id": 3,
-      "module": "Cell",
-      "description": "toggleFlag should not flag a revealed cell",
-      "redTimestamp": "2025-01-13T06:12:52Z",
-      "greenTimestamp": "2025-01-13T06:13:13Z",
-      "notes": "Added isRevealed check to toggleFlag method",
-      "status": "passing"
-    },
-    {
-      "id": 4,
-      "module": "Cell",
-      "description": "setMine should mark cell as a mine",
-      "redTimestamp": "2025-01-13T06:13:43Z",
-      "greenTimestamp": "2025-01-13T06:14:02Z",
-      "notes": "Added setMine method",
-      "status": "passing"
-    },
-    {
-      "id": 5,
-      "module": "Cell",
-      "description": "setAdjacentMines should set the adjacent mine count",
-      "redTimestamp": "2025-01-13T06:14:23Z",
-      "greenTimestamp": "2025-01-13T06:14:42Z",
-      "notes": "Added setAdjacentMines method - Cell class complete!",
-      "status": "passing"
-    },
-    {
-      "id": 6,
-      "module": "Board",
-      "description": "should create a board with specified rows and cols",
-      "redTimestamp": "2025-01-13T06:21:33Z",
-      "greenTimestamp": "2025-01-13T06:21:46Z",
-      "notes": "Board class created with rows and cols properties",
-      "status": "passing"
-    },
-    {
-      "id": 7,
-      "module": "Board",
-      "description": "should initialize a grid of cells",
-      "redTimestamp": "2025-01-13T06:22:57Z",
-      "greenTimestamp": "2025-01-13T06:23:12Z",
-      "notes": "Added _initializeGrid method to create 2D array",
-      "status": "passing"
-    },
-    {
-      "id": 8,
-      "module": "Board",
-      "description": "should populate grid with Cell instances",
-      "redTimestamp": "2025-01-13T06:23:44Z",
-      "greenTimestamp": "2025-01-13T06:23:57Z",
-      "notes": "Updated _initializeGrid to create Cell instances with correct row/col",
-      "status": "passing"
-    },
-    {
-      "id": 9,
-      "module": "Board",
-      "description": "getCell should return cell at given position",
-      "redTimestamp": "2025-01-13T06:24:27Z",
-      "greenTimestamp": "2025-01-13T06:24:41Z",
-      "notes": "Added getCell method to retrieve cell by row and col",
-      "status": "passing"
-    },
-    {
-      "id": 10,
-      "module": "Board",
-      "description": "getCell should return null for out-of-bounds position",
-      "redTimestamp": "2025-01-13T06:25:10Z",
-      "greenTimestamp": "2025-01-13T06:25:23Z",
-      "notes": "Added bounds checking to getCell method",
-      "status": "passing"
-    },
-    {
-      "id": 11,
-      "module": "Board",
-      "description": "getNeighbors should return 8 neighbors for center cell",
-      "redTimestamp": "2025-01-13T06:25:55Z",
-      "greenTimestamp": "2025-01-13T06:26:09Z",
-      "notes": "Implemented getNeighbors method to find all 8 adjacent cells",
-      "status": "passing"
-    },
-    {
-      "id": 12,
-      "module": "Board",
-      "description": "getNeighbors should return 3 neighbors for corner cell",
-      "redTimestamp": "2025-01-13T06:26:41Z",
-      "greenTimestamp": "2025-01-13T06:26:41Z",
-      "notes": "Already green - getNeighbors correctly filters out-of-bounds cells",
-      "status": "passing"
-    },
-    {
-      "id": 13,
-      "module": "Board",
-      "description": "placeMines should place correct number of mines",
-      "redTimestamp": "2025-01-13T06:27:20Z",
-      "greenTimestamp": "2025-01-13T06:27:37Z",
-      "notes": "Implemented random mine placement with duplicate prevention",
-      "status": "passing"
-    },
-    {
-      "id": 14,
-      "module": "Board",
-      "description": "calculateAdjacentMines should set correct counts",
-      "redTimestamp": "2025-01-13T06:28:14Z",
-      "greenTimestamp": "2025-01-13T06:28:53Z",
-      "notes": "Implemented adjacent mine calculation using getNeighbors and filter - Board class core complete!",
-      "status": "passing"
-    },
-    {
-      "id": 15,
-      "module": "Board",
-      "description": "revealCell should reveal a non-mine cell",
-      "redTimestamp": "2025-01-13T06:36:49Z",
-      "greenTimestamp": "2025-01-13T06:37:13Z",
-      "notes": "Added revealCell method that calls cell.reveal()",
-      "status": "passing"
-    },
-    {
-      "id": 16,
-      "module": "Board",
-      "description": "revealCell should trigger flood-fill for empty cells with 0 adjacent mines",
-      "redTimestamp": "2025-01-13T06:38:09Z",
-      "greenTimestamp": "2025-01-13T06:38:27Z",
-      "notes": "Implemented recursive flood-fill algorithm for cells with 0 adjacent mines",
-      "status": "passing"
-    },
-    {
-      "id": 17,
-      "module": "Board",
-      "description": "isGameWon should return true when all non-mine cells are revealed",
-      "redTimestamp": "2025-01-13T06:39:05Z",
-      "greenTimestamp": "2025-01-13T06:39:23Z",
-      "notes": "Implemented win condition check - iterates all cells to verify non-mines are revealed",
-      "status": "passing"
-    },
-    {
-      "id": 18,
-      "module": "Board",
-      "description": "isGameLost should return true when a mine is revealed",
-      "redTimestamp": "2025-01-13T06:39:57Z",
-      "greenTimestamp": "2025-01-13T06:40:13Z",
-      "notes": "Implemented lose condition check - finds any revealed mine",
-      "status": "passing"
-    },
-    {
-      "id": 19,
-      "module": "Board",
-      "description": "isGameLost should return false when no mines are revealed",
-      "redTimestamp": "2025-01-13T06:39:57Z",
-      "greenTimestamp": "2025-01-13T06:40:13Z",
-      "notes": "Validates isGameLost returns false when game is still in progress",
-      "status": "passing"
-    },
-    {
-      "id": 20,
-      "module": "GameController",
-      "description": "should initialize a new game with specified dimensions and mine count",
-      "redTimestamp": "2025-01-13T06:48:18Z",
-      "greenTimestamp": "2025-01-13T06:48:35Z",
-      "notes": "Created GameController with startNewGame and getGameState methods",
-      "status": "passing"
-    },
-    {
-      "id": 21,
-      "module": "GameController",
-      "description": "handleCellClick should reveal a cell when clicked",
-      "redTimestamp": "2025-01-13T06:49:30Z",
-      "greenTimestamp": "2025-01-13T06:49:46Z",
-      "notes": "Implemented handleCellClick with win/lose detection",
-      "status": "passing"
-    },
-    {
-      "id": 22,
-      "module": "GameController",
-      "description": "should ensure first click never hits a mine",
-      "redTimestamp": "2025-01-13T06:51:07Z",
-      "greenTimestamp": "2025-01-13T06:51:29Z",
-      "notes": "Implemented first-click guarantee - regenerates board until clicked cell is not a mine",
-      "status": "passing"
-    },
-    {
-      "id": 23,
-      "module": "GameController",
-      "description": "handleCellRightClick should toggle flag on cell",
-      "redTimestamp": "2025-01-13T06:52:10Z",
-      "greenTimestamp": "2025-01-13T06:52:29Z",
-      "notes": "Implemented handleCellRightClick to toggle flags",
-      "status": "passing"
-    },
-    {
-      "id": 24,
-      "module": "BoardRenderer",
-      "description": "should create a board container element",
-      "redTimestamp": "2025-01-13T07:05:48Z",
-      "greenTimestamp": "2025-01-13T07:06:01Z",
-      "notes": "Created BoardRenderer class with render() method that creates .board div",
-      "status": "passing"
-    },
-    {
-      "id": 25,
-      "module": "BoardRenderer",
-      "description": "should render correct number of cell elements",
-      "redTimestamp": "2025-01-13T07:07:32Z",
-      "greenTimestamp": "2025-01-13T07:07:53Z",
-      "notes": "Added nested loop to create cell div for each position in board grid",
-      "status": "passing"
-    },
-    {
-      "id": 26,
-      "module": "BoardRenderer",
-      "description": "should set data-row and data-col attributes on each cell",
-      "redTimestamp": "2025-01-13T07:10:09Z",
-      "greenTimestamp": "2025-01-13T07:10:23Z",
-      "notes": "Added data-row and data-col attributes to cell elements for event handling",
-      "status": "passing"
-    },
-    {
-      "id": 27,
-      "module": "BoardRenderer",
-      "description": "should add cell-hidden class to unrevealed cells",
-      "redTimestamp": "2025-01-13T07:15:29Z",
-      "greenTimestamp": "2025-01-13T07:15:55Z",
-      "notes": "Added cell-hidden class for unrevealed cells by checking cell.isRevealed",
-      "status": "passing"
-    },
-    {
-      "id": 28,
-      "module": "BoardRenderer",
-      "description": "should add cell-revealed class to revealed cells",
-      "redTimestamp": "2025-01-13T07:16:24Z",
-      "greenTimestamp": "2025-01-13T07:16:45Z",
-      "notes": "Added else branch to add cell-revealed class when cell.isRevealed is true",
-      "status": "passing"
-    },
-    {
-      "id": 29,
-      "module": "BoardRenderer",
-      "description": "should add cell-flagged class to flagged cells",
-      "redTimestamp": "2025-01-13T07:17:12Z",
-      "greenTimestamp": "2025-01-13T07:17:32Z",
-      "notes": "Added check for cell.isFlagged to apply cell-flagged class",
-      "status": "passing"
-    },
-    {
-      "id": 30,
-      "module": "BoardRenderer",
-      "description": "should display adjacent mine count on revealed cells with mines nearby",
-      "redTimestamp": "2025-01-13T07:18:16Z",
-      "greenTimestamp": "2025-01-13T07:18:37Z",
-      "notes": "Added content display - show adjacentMines count for revealed cells with adjacentMines > 0",
-      "status": "passing"
-    },
-    {
-      "id": 31,
-      "module": "BoardRenderer",
-      "description": "should display empty content on revealed cells with 0 adjacent mines",
-      "redTimestamp": "2025-01-13T07:19:08Z",
-      "greenTimestamp": "2025-01-13T07:19:08Z",
-      "notes": "Already green - previous implementation only adds content when adjacentMines > 0",
-      "status": "passing"
-    },
-    {
-      "id": 32,
-      "module": "BoardRenderer",
-      "description": "should display mine symbol on revealed mine cells",
-      "redTimestamp": "2025-01-13T07:19:40Z",
-      "greenTimestamp": "2025-01-13T07:20:01Z",
-      "notes": "Added mine symbol display - check cell.isMine and show 💣 for revealed mines",
-      "status": "passing"
-    },
-    {
-      "id": 33,
-      "module": "BoardRenderer",
-      "description": "should display flag symbol on flagged cells",
-      "redTimestamp": "2025-01-13T07:20:32Z",
-      "greenTimestamp": "2025-01-13T07:20:54Z",
-      "notes": "Added flag symbol display - check cell.isFlagged first and show 🚩",
-      "status": "passing"
-    },
-    {
-      "id": 34,
-      "module": "BoardRenderer",
-      "description": "should set CSS grid-template properties based on board dimensions",
-      "redTimestamp": "2025-01-13T07:21:45Z",
-      "greenTimestamp": "2025-01-13T07:22:08Z",
-      "notes": "Set grid-template-rows and grid-template-columns using board rows/cols for responsive grid",
-      "status": "passing"
-    },
-    {
-      "id": 35,
-      "module": "BoardRenderer",
-      "description": "should clear and re-render when render() called multiple times",
-      "redTimestamp": "2025-01-13T07:22:59Z",
-      "greenTimestamp": "2025-01-13T07:23:24Z",
-      "notes": "Clear container with innerHTML = '' before rendering to enable state updates",
-      "status": "passing"
-    },
-    {
-      "id": 36,
-      "module": "InputHandler",
-      "description": "should accept container and gameController in constructor",
-      "redTimestamp": "2025-01-13T19:00:40Z",
-      "greenTimestamp": "2025-01-13T19:02:22Z",
-      "notes": "Created InputHandler class with constructor storing container and gameController",
-      "status": "passing"
-    },
-    {
-      "id": 37,
-      "module": "InputHandler",
-      "description": "should attach click event listener to container",
-      "redTimestamp": "2025-01-13T19:02:55Z",
-      "greenTimestamp": "2025-01-13T19:03:15Z",
-      "notes": "Added click event listener in constructor with handleClick method",
-      "status": "passing"
-    },
-    {
-      "id": 38,
-      "module": "InputHandler",
-      "description": "should call gameController.handleCellClick with correct row/col on cell click",
-      "redTimestamp": "2025-01-13T19:03:39Z",
-      "greenTimestamp": "2025-01-13T19:04:00Z",
-      "notes": "Implemented handleClick to extract data-row/data-col attributes and call gameController.handleCellClick",
-      "status": "passing"
-    },
-    {
-      "id": 39,
-      "module": "InputHandler",
-      "description": "should attach contextmenu event listener to container",
-      "redTimestamp": "2025-01-13T19:04:32Z",
-      "greenTimestamp": "2025-01-13T19:04:57Z",
-      "notes": "Added contextmenu event listener in constructor with handleContextMenu method",
-      "status": "passing"
-    },
-    {
-      "id": 40,
-      "module": "InputHandler",
-      "description": "should call gameController.handleCellRightClick with correct row/col on cell right-click",
-      "redTimestamp": "2025-01-13T19:05:23Z",
-      "greenTimestamp": "2025-01-13T19:05:43Z",
-      "notes": "Implemented handleContextMenu to extract data-row/data-col attributes and call gameController.handleCellRightClick",
-      "status": "passing"
-    },
-    {
-      "id": 41,
-      "module": "InputHandler",
-      "description": "should prevent default context menu behavior",
-      "redTimestamp": "2025-01-13T19:06:12Z",
-      "greenTimestamp": "2025-01-13T19:06:33Z",
-      "notes": "Added event.preventDefault() to handleContextMenu to prevent browser context menu",
-      "status": "passing"
-    },
-    {
-      "id": 42,
-      "module": "InputHandler",
-      "description": "should ignore clicks on non-cell elements (no data-row/data-col attributes)",
-      "redTimestamp": "2025-01-13T19:07:10Z",
-      "greenTimestamp": "2025-01-13T19:07:10Z",
-      "notes": "Already green - handleClick checks for null row/col before calling gameController",
-      "status": "passing"
-    },
-    {
-      "id": 43,
-      "module": "InputHandler",
-      "description": "should ignore right-clicks on non-cell elements",
-      "redTimestamp": "2025-01-13T19:07:38Z",
-      "greenTimestamp": "2025-01-13T19:07:38Z",
-      "notes": "Already green - handleContextMenu checks for null row/col before calling gameController",
-      "status": "passing"
-    },
-    {
-      "id": 44,
-      "module": "InputHandler",
-      "description": "should ignore clicks on elements with invalid data-row (NaN injection)",
-      "redTimestamp": "2025-01-13T19:36:09Z",
-      "greenTimestamp": "2025-01-13T19:37:09Z",
-      "notes": "Fixed with _getCellCoordinates helper - validates parseInt result with isNaN check. Security vulnerability resolved!",
-      "status": "passing"
-    },
-    {
-      "id": 45,
-      "module": "InputHandler",
-      "description": "should ignore clicks on elements with empty data attributes",
-      "redTimestamp": "2025-01-13T19:36:09Z",
-      "greenTimestamp": "2025-01-13T19:37:09Z",
-      "notes": "Fixed with _getCellCoordinates helper - empty strings now rejected by isNaN validation",
-      "status": "passing"
-    },
-    {
-      "id": 46,
-      "module": "InputHandler",
-      "description": "should ignore clicks on elements with only partial attributes",
-      "redTimestamp": "2025-01-13T19:36:09Z",
-      "greenTimestamp": "2025-01-13T19:36:09Z",
-      "notes": "Already green - null check handles missing data-col attribute",
-      "status": "passing"
-    },
-    {
-      "id": 47,
-      "module": "InputHandler",
-      "description": "should remove event listeners when destroy() is called",
-      "redTimestamp": "2025-01-13T19:36:09Z",
-      "greenTimestamp": "2025-01-13T19:37:09Z",
-      "notes": "Added destroy() method with removeEventListener for both click and contextmenu. Prevents memory leaks!",
-      "status": "passing"
-    }
-  ]
+    "project": "Monosweeper",
+    "started": "2025-01-13",
+    "description": "TDD progress log tracking RED-GREEN cycles",
+    "tests": [
+        {
+            "id": 1,
+            "module": "Cell",
+            "description": "toggleFlag should flag an unflagged cell",
+            "redTimestamp": "2025-01-13T06:12:04Z",
+            "greenTimestamp": "2025-01-13T06:12:04Z",
+            "notes": "Already green - toggleFlag implemented in previous test",
+            "status": "passing"
+        },
+        {
+            "id": 2,
+            "module": "Cell",
+            "description": "toggleFlag should unflag a flagged cell",
+            "redTimestamp": "2025-01-13T06:12:28Z",
+            "greenTimestamp": "2025-01-13T06:12:28Z",
+            "notes": "Already green - toggleFlag already toggles correctly",
+            "status": "passing"
+        },
+        {
+            "id": 3,
+            "module": "Cell",
+            "description": "toggleFlag should not flag a revealed cell",
+            "redTimestamp": "2025-01-13T06:12:52Z",
+            "greenTimestamp": "2025-01-13T06:13:13Z",
+            "notes": "Added isRevealed check to toggleFlag method",
+            "status": "passing"
+        },
+        {
+            "id": 4,
+            "module": "Cell",
+            "description": "setMine should mark cell as a mine",
+            "redTimestamp": "2025-01-13T06:13:43Z",
+            "greenTimestamp": "2025-01-13T06:14:02Z",
+            "notes": "Added setMine method",
+            "status": "passing"
+        },
+        {
+            "id": 5,
+            "module": "Cell",
+            "description": "setAdjacentMines should set the adjacent mine count",
+            "redTimestamp": "2025-01-13T06:14:23Z",
+            "greenTimestamp": "2025-01-13T06:14:42Z",
+            "notes": "Added setAdjacentMines method - Cell class complete!",
+            "status": "passing"
+        },
+        {
+            "id": 6,
+            "module": "Board",
+            "description": "should create a board with specified rows and cols",
+            "redTimestamp": "2025-01-13T06:21:33Z",
+            "greenTimestamp": "2025-01-13T06:21:46Z",
+            "notes": "Board class created with rows and cols properties",
+            "status": "passing"
+        },
+        {
+            "id": 7,
+            "module": "Board",
+            "description": "should initialize a grid of cells",
+            "redTimestamp": "2025-01-13T06:22:57Z",
+            "greenTimestamp": "2025-01-13T06:23:12Z",
+            "notes": "Added _initializeGrid method to create 2D array",
+            "status": "passing"
+        },
+        {
+            "id": 8,
+            "module": "Board",
+            "description": "should populate grid with Cell instances",
+            "redTimestamp": "2025-01-13T06:23:44Z",
+            "greenTimestamp": "2025-01-13T06:23:57Z",
+            "notes": "Updated _initializeGrid to create Cell instances with correct row/col",
+            "status": "passing"
+        },
+        {
+            "id": 9,
+            "module": "Board",
+            "description": "getCell should return cell at given position",
+            "redTimestamp": "2025-01-13T06:24:27Z",
+            "greenTimestamp": "2025-01-13T06:24:41Z",
+            "notes": "Added getCell method to retrieve cell by row and col",
+            "status": "passing"
+        },
+        {
+            "id": 10,
+            "module": "Board",
+            "description": "getCell should return null for out-of-bounds position",
+            "redTimestamp": "2025-01-13T06:25:10Z",
+            "greenTimestamp": "2025-01-13T06:25:23Z",
+            "notes": "Added bounds checking to getCell method",
+            "status": "passing"
+        },
+        {
+            "id": 11,
+            "module": "Board",
+            "description": "getNeighbors should return 8 neighbors for center cell",
+            "redTimestamp": "2025-01-13T06:25:55Z",
+            "greenTimestamp": "2025-01-13T06:26:09Z",
+            "notes": "Implemented getNeighbors method to find all 8 adjacent cells",
+            "status": "passing"
+        },
+        {
+            "id": 12,
+            "module": "Board",
+            "description": "getNeighbors should return 3 neighbors for corner cell",
+            "redTimestamp": "2025-01-13T06:26:41Z",
+            "greenTimestamp": "2025-01-13T06:26:41Z",
+            "notes": "Already green - getNeighbors correctly filters out-of-bounds cells",
+            "status": "passing"
+        },
+        {
+            "id": 13,
+            "module": "Board",
+            "description": "placeMines should place correct number of mines",
+            "redTimestamp": "2025-01-13T06:27:20Z",
+            "greenTimestamp": "2025-01-13T06:27:37Z",
+            "notes": "Implemented random mine placement with duplicate prevention",
+            "status": "passing"
+        },
+        {
+            "id": 14,
+            "module": "Board",
+            "description": "calculateAdjacentMines should set correct counts",
+            "redTimestamp": "2025-01-13T06:28:14Z",
+            "greenTimestamp": "2025-01-13T06:28:53Z",
+            "notes": "Implemented adjacent mine calculation using getNeighbors and filter - Board class core complete!",
+            "status": "passing"
+        },
+        {
+            "id": 15,
+            "module": "Board",
+            "description": "revealCell should reveal a non-mine cell",
+            "redTimestamp": "2025-01-13T06:36:49Z",
+            "greenTimestamp": "2025-01-13T06:37:13Z",
+            "notes": "Added revealCell method that calls cell.reveal()",
+            "status": "passing"
+        },
+        {
+            "id": 16,
+            "module": "Board",
+            "description": "revealCell should trigger flood-fill for empty cells with 0 adjacent mines",
+            "redTimestamp": "2025-01-13T06:38:09Z",
+            "greenTimestamp": "2025-01-13T06:38:27Z",
+            "notes": "Implemented recursive flood-fill algorithm for cells with 0 adjacent mines",
+            "status": "passing"
+        },
+        {
+            "id": 17,
+            "module": "Board",
+            "description": "isGameWon should return true when all non-mine cells are revealed",
+            "redTimestamp": "2025-01-13T06:39:05Z",
+            "greenTimestamp": "2025-01-13T06:39:23Z",
+            "notes": "Implemented win condition check - iterates all cells to verify non-mines are revealed",
+            "status": "passing"
+        },
+        {
+            "id": 18,
+            "module": "Board",
+            "description": "isGameLost should return true when a mine is revealed",
+            "redTimestamp": "2025-01-13T06:39:57Z",
+            "greenTimestamp": "2025-01-13T06:40:13Z",
+            "notes": "Implemented lose condition check - finds any revealed mine",
+            "status": "passing"
+        },
+        {
+            "id": 19,
+            "module": "Board",
+            "description": "isGameLost should return false when no mines are revealed",
+            "redTimestamp": "2025-01-13T06:39:57Z",
+            "greenTimestamp": "2025-01-13T06:40:13Z",
+            "notes": "Validates isGameLost returns false when game is still in progress",
+            "status": "passing"
+        },
+        {
+            "id": 20,
+            "module": "GameController",
+            "description": "should initialize a new game with specified dimensions and mine count",
+            "redTimestamp": "2025-01-13T06:48:18Z",
+            "greenTimestamp": "2025-01-13T06:48:35Z",
+            "notes": "Created GameController with startNewGame and getGameState methods",
+            "status": "passing"
+        },
+        {
+            "id": 21,
+            "module": "GameController",
+            "description": "handleCellClick should reveal a cell when clicked",
+            "redTimestamp": "2025-01-13T06:49:30Z",
+            "greenTimestamp": "2025-01-13T06:49:46Z",
+            "notes": "Implemented handleCellClick with win/lose detection",
+            "status": "passing"
+        },
+        {
+            "id": 22,
+            "module": "GameController",
+            "description": "should ensure first click never hits a mine",
+            "redTimestamp": "2025-01-13T06:51:07Z",
+            "greenTimestamp": "2025-01-13T06:51:29Z",
+            "notes": "Implemented first-click guarantee - regenerates board until clicked cell is not a mine",
+            "status": "passing"
+        },
+        {
+            "id": 23,
+            "module": "GameController",
+            "description": "handleCellRightClick should toggle flag on cell",
+            "redTimestamp": "2025-01-13T06:52:10Z",
+            "greenTimestamp": "2025-01-13T06:52:29Z",
+            "notes": "Implemented handleCellRightClick to toggle flags",
+            "status": "passing"
+        },
+        {
+            "id": 24,
+            "module": "BoardRenderer",
+            "description": "should create a board container element",
+            "redTimestamp": "2025-01-13T07:05:48Z",
+            "greenTimestamp": "2025-01-13T07:06:01Z",
+            "notes": "Created BoardRenderer class with render() method that creates .board div",
+            "status": "passing"
+        },
+        {
+            "id": 25,
+            "module": "BoardRenderer",
+            "description": "should render correct number of cell elements",
+            "redTimestamp": "2025-01-13T07:07:32Z",
+            "greenTimestamp": "2025-01-13T07:07:53Z",
+            "notes": "Added nested loop to create cell div for each position in board grid",
+            "status": "passing"
+        },
+        {
+            "id": 26,
+            "module": "BoardRenderer",
+            "description": "should set data-row and data-col attributes on each cell",
+            "redTimestamp": "2025-01-13T07:10:09Z",
+            "greenTimestamp": "2025-01-13T07:10:23Z",
+            "notes": "Added data-row and data-col attributes to cell elements for event handling",
+            "status": "passing"
+        },
+        {
+            "id": 27,
+            "module": "BoardRenderer",
+            "description": "should add cell-hidden class to unrevealed cells",
+            "redTimestamp": "2025-01-13T07:15:29Z",
+            "greenTimestamp": "2025-01-13T07:15:55Z",
+            "notes": "Added cell-hidden class for unrevealed cells by checking cell.isRevealed",
+            "status": "passing"
+        },
+        {
+            "id": 28,
+            "module": "BoardRenderer",
+            "description": "should add cell-revealed class to revealed cells",
+            "redTimestamp": "2025-01-13T07:16:24Z",
+            "greenTimestamp": "2025-01-13T07:16:45Z",
+            "notes": "Added else branch to add cell-revealed class when cell.isRevealed is true",
+            "status": "passing"
+        },
+        {
+            "id": 29,
+            "module": "BoardRenderer",
+            "description": "should add cell-flagged class to flagged cells",
+            "redTimestamp": "2025-01-13T07:17:12Z",
+            "greenTimestamp": "2025-01-13T07:17:32Z",
+            "notes": "Added check for cell.isFlagged to apply cell-flagged class",
+            "status": "passing"
+        },
+        {
+            "id": 30,
+            "module": "BoardRenderer",
+            "description": "should display adjacent mine count on revealed cells with mines nearby",
+            "redTimestamp": "2025-01-13T07:18:16Z",
+            "greenTimestamp": "2025-01-13T07:18:37Z",
+            "notes": "Added content display - show adjacentMines count for revealed cells with adjacentMines > 0",
+            "status": "passing"
+        },
+        {
+            "id": 31,
+            "module": "BoardRenderer",
+            "description": "should display empty content on revealed cells with 0 adjacent mines",
+            "redTimestamp": "2025-01-13T07:19:08Z",
+            "greenTimestamp": "2025-01-13T07:19:08Z",
+            "notes": "Already green - previous implementation only adds content when adjacentMines > 0",
+            "status": "passing"
+        },
+        {
+            "id": 32,
+            "module": "BoardRenderer",
+            "description": "should display mine symbol on revealed mine cells",
+            "redTimestamp": "2025-01-13T07:19:40Z",
+            "greenTimestamp": "2025-01-13T07:20:01Z",
+            "notes": "Added mine symbol display - check cell.isMine and show 💣 for revealed mines",
+            "status": "passing"
+        },
+        {
+            "id": 33,
+            "module": "BoardRenderer",
+            "description": "should display flag symbol on flagged cells",
+            "redTimestamp": "2025-01-13T07:20:32Z",
+            "greenTimestamp": "2025-01-13T07:20:54Z",
+            "notes": "Added flag symbol display - check cell.isFlagged first and show 🚩",
+            "status": "passing"
+        },
+        {
+            "id": 34,
+            "module": "BoardRenderer",
+            "description": "should set CSS grid-template properties based on board dimensions",
+            "redTimestamp": "2025-01-13T07:21:45Z",
+            "greenTimestamp": "2025-01-13T07:22:08Z",
+            "notes": "Set grid-template-rows and grid-template-columns using board rows/cols for responsive grid",
+            "status": "passing"
+        },
+        {
+            "id": 35,
+            "module": "BoardRenderer",
+            "description": "should clear and re-render when render() called multiple times",
+            "redTimestamp": "2025-01-13T07:22:59Z",
+            "greenTimestamp": "2025-01-13T07:23:24Z",
+            "notes": "Clear container with innerHTML = '' before rendering to enable state updates",
+            "status": "passing"
+        },
+        {
+            "id": 36,
+            "module": "InputHandler",
+            "description": "should accept container and gameController in constructor",
+            "redTimestamp": "2025-01-13T19:00:40Z",
+            "greenTimestamp": "2025-01-13T19:02:22Z",
+            "notes": "Created InputHandler class with constructor storing container and gameController",
+            "status": "passing"
+        },
+        {
+            "id": 37,
+            "module": "InputHandler",
+            "description": "should attach click event listener to container",
+            "redTimestamp": "2025-01-13T19:02:55Z",
+            "greenTimestamp": "2025-01-13T19:03:15Z",
+            "notes": "Added click event listener in constructor with handleClick method",
+            "status": "passing"
+        },
+        {
+            "id": 38,
+            "module": "InputHandler",
+            "description": "should call gameController.handleCellClick with correct row/col on cell click",
+            "redTimestamp": "2025-01-13T19:03:39Z",
+            "greenTimestamp": "2025-01-13T19:04:00Z",
+            "notes": "Implemented handleClick to extract data-row/data-col attributes and call gameController.handleCellClick",
+            "status": "passing"
+        },
+        {
+            "id": 39,
+            "module": "InputHandler",
+            "description": "should attach contextmenu event listener to container",
+            "redTimestamp": "2025-01-13T19:04:32Z",
+            "greenTimestamp": "2025-01-13T19:04:57Z",
+            "notes": "Added contextmenu event listener in constructor with handleContextMenu method",
+            "status": "passing"
+        },
+        {
+            "id": 40,
+            "module": "InputHandler",
+            "description": "should call gameController.handleCellRightClick with correct row/col on cell right-click",
+            "redTimestamp": "2025-01-13T19:05:23Z",
+            "greenTimestamp": "2025-01-13T19:05:43Z",
+            "notes": "Implemented handleContextMenu to extract data-row/data-col attributes and call gameController.handleCellRightClick",
+            "status": "passing"
+        },
+        {
+            "id": 41,
+            "module": "InputHandler",
+            "description": "should prevent default context menu behavior",
+            "redTimestamp": "2025-01-13T19:06:12Z",
+            "greenTimestamp": "2025-01-13T19:06:33Z",
+            "notes": "Added event.preventDefault() to handleContextMenu to prevent browser context menu",
+            "status": "passing"
+        },
+        {
+            "id": 42,
+            "module": "InputHandler",
+            "description": "should ignore clicks on non-cell elements (no data-row/data-col attributes)",
+            "redTimestamp": "2025-01-13T19:07:10Z",
+            "greenTimestamp": "2025-01-13T19:07:10Z",
+            "notes": "Already green - handleClick checks for null row/col before calling gameController",
+            "status": "passing"
+        },
+        {
+            "id": 43,
+            "module": "InputHandler",
+            "description": "should ignore right-clicks on non-cell elements",
+            "redTimestamp": "2025-01-13T19:07:38Z",
+            "greenTimestamp": "2025-01-13T19:07:38Z",
+            "notes": "Already green - handleContextMenu checks for null row/col before calling gameController",
+            "status": "passing"
+        },
+        {
+            "id": 44,
+            "module": "InputHandler",
+            "description": "should ignore clicks on elements with invalid data-row (NaN injection)",
+            "redTimestamp": "2025-01-13T19:36:09Z",
+            "greenTimestamp": "2025-01-13T19:37:09Z",
+            "notes": "Fixed with _getCellCoordinates helper - validates parseInt result with isNaN check. Security vulnerability resolved!",
+            "status": "passing"
+        },
+        {
+            "id": 45,
+            "module": "InputHandler",
+            "description": "should ignore clicks on elements with empty data attributes",
+            "redTimestamp": "2025-01-13T19:36:09Z",
+            "greenTimestamp": "2025-01-13T19:37:09Z",
+            "notes": "Fixed with _getCellCoordinates helper - empty strings now rejected by isNaN validation",
+            "status": "passing"
+        },
+        {
+            "id": 46,
+            "module": "InputHandler",
+            "description": "should ignore clicks on elements with only partial attributes",
+            "redTimestamp": "2025-01-13T19:36:09Z",
+            "greenTimestamp": "2025-01-13T19:36:09Z",
+            "notes": "Already green - null check handles missing data-col attribute",
+            "status": "passing"
+        },
+        {
+            "id": 47,
+            "module": "InputHandler",
+            "description": "should remove event listeners when destroy() is called",
+            "redTimestamp": "2025-01-13T19:36:09Z",
+            "greenTimestamp": "2025-01-13T19:37:09Z",
+            "notes": "Added destroy() method with removeEventListener for both click and contextmenu. Prevents memory leaks!",
+            "status": "passing"
+        }
+    ]
 }

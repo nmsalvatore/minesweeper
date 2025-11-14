@@ -1,4 +1,4 @@
-# Minesweeper Web App
+# Monosweeper
 
 ## Project Overview
 A modern, mobile-responsive Minesweeper game built with vanilla JavaScript, HTML, and CSS using Test-Driven Development (TDD).
