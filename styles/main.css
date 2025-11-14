@@ -7,7 +7,6 @@
     --nord-primary: hsl(190, 45%, 60%);
     --nord-accent: hsl(220, 15%, 35%);
     --nord-red: hsl(355, 42.5%, 57.5%);
-    --nord-red-light: hsl(355, 72.5%, 82.5%);
 
     /* Spacing */
     --spacing-md: 16px;
@@ -81,7 +80,7 @@ h1::before {
     color: var(--nord-accent);
     border: none;
     font-family: inherit;
-    font-size: 300%;
+    font-size: 2.75rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -147,12 +146,22 @@ h1::before {
 }
 
 .cell-hidden:active {
-    background: hsl(190, 45%, 60%, 0.1);  /* var(--nord-primary) with transparency */
+    background: hsl(
+        190,
+        45%,
+        60%,
+        0.1
+    ); /* var(--nord-primary) with transparency */
 }
 
 /* Revealed cells */
 .cell-revealed {
-    background: hsl(220, 15%, 35%, 0.2);  /* var(--nord-accent) with transparency */
+    background: hsl(
+        220,
+        15%,
+        35%,
+        0.2
+    ); /* var(--nord-accent) with transparency */
     border: 1px solid var(--nord-accent);
     cursor: default;
     color: var(--nord-primary);
@@ -160,7 +169,12 @@ h1::before {
 
 /* Flagged cells */
 .cell-flagged {
-    background: hsl(190, 45%, 60%, 0.15);  /* var(--nord-primary) with transparency */
+    background: hsl(
+        190,
+        45%,
+        60%,
+        0.15
+    ); /* var(--nord-primary) with transparency */
     border: 1px solid var(--nord-primary);
     color: var(--nord-primary);
     font-size: 20px;
@@ -168,15 +182,20 @@ h1::before {
 
 /* Revealed mines (not the hit mine) */
 .cell-mine {
-    background: hsl(355, 42.5%, 57.5%, 0.2);  /* var(--nord-red) with transparency */
+    background: hsl(
+        355,
+        42.5%,
+        57.5%,
+        0.2
+    ); /* var(--nord-red) with transparency */
     border: 1px solid var(--nord-accent);
 }
 
 /* Hit mine - red background */
 .cell-hit-mine {
     background: var(--nord-red) !important;
-    border: 1px solid var(--nord-red-light) !important;
-    color: var(--nord-red-light) !important;
+    border: 1px solid var(--nord-primary) !important;
+    color: var(--nord-primary) !important;
 }
 
 /* All numbers and symbols use Nord cyan */
@@ -197,6 +216,10 @@ h1::before {
         letter-spacing: 2px;
     }
 
+    .new-game-btn {
+        font-size: 2.5rem;
+    }
+
     .cell {
         width: var(--cell-size-mobile);
         height: var(--cell-size-mobile);
@@ -213,5 +236,9 @@ h1::before {
 
     h1 {
         font-size: 1.25rem;
+    }
+
+    .new-game-btn {
+        font-size: 2rem;
     }
 }
