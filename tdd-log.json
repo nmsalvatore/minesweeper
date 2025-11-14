@@ -317,6 +317,15 @@
       "greenTimestamp": "2025-01-13T07:23:24Z",
       "notes": "Clear container with innerHTML = '' before rendering to enable state updates",
       "status": "passing"
+    },
+    {
+      "id": 36,
+      "module": "InputHandler",
+      "description": "should accept container and gameController in constructor",
+      "redTimestamp": "2025-01-13T19:00:40Z",
+      "greenTimestamp": "2025-01-13T19:02:22Z",
+      "notes": "Created InputHandler class with constructor storing container and gameController",
+      "status": "passing"
     }
   ]
 }

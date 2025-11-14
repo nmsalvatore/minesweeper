@@ -97,7 +97,7 @@ This strict TDD cycle ensures proper test coverage and prevents over-implementat
 ### Git Workflow
 - **Conventional Commits**: All commits use conventional commit format (test:, feat:, refactor:, etc.)
 - **Feature Branches**: Each new class/feature gets its own branch (e.g., `feature/board-class`)
-- **Test-Driven Commits**: Automated commit after every passing test
+- **Test-Driven Commits**: ommit after every passing test
 - **Main Branch**: Prompt user before merging feature branches to main
 - **Commit Format**: `test(Module): description` or `feat(Module): description`
 
