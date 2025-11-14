@@ -2,15 +2,14 @@
    Nord Theme - CSS Variables (DRY)
    ======================================== */
 :root {
-    /* Color Palette - 3 Colors Max (Nord-inspired) */
-    --nord-bg: HSL(220, 15%, 25%);
-    --nord-primary: HSL(190, 45%, 60%);
-    --nord-accent: HSL(220, 15%, 35%);
-    --nord-red: HSL(355, 42.5%, 57.5%);
-    --nord-red-light: HSL(355, 72.5%, 82.5%);
+    /* Color Palette (Nord-inspired) */
+    --nord-bg: hsl(220, 15%, 25%);
+    --nord-primary: hsl(190, 45%, 60%);
+    --nord-accent: hsl(220, 15%, 35%);
+    --nord-red: hsl(355, 42.5%, 57.5%);
+    --nord-red-light: hsl(355, 72.5%, 82.5%);
 
     /* Spacing */
-    --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xl: 32px;
@@ -133,7 +132,7 @@ h1::before {
     cursor: pointer;
     user-select: none;
     transition: all 0.1s ease;
-    font-family: inherit;
+    font-family: "Courier New", "Consolas", "Monaco", monospace;
 }
 
 /* Hidden cells (unrevealed) */
@@ -148,12 +147,12 @@ h1::before {
 }
 
 .cell-hidden:active {
-    background: rgba(136, 192, 208, 0.1);
+    background: hsl(190, 45%, 60%, 0.1);  /* var(--nord-primary) with transparency */
 }
 
 /* Revealed cells */
 .cell-revealed {
-    background-color: rgba(76, 86, 106, 0.2);
+    background: hsl(220, 15%, 35%, 0.2);  /* var(--nord-accent) with transparency */
     border: 1px solid var(--nord-accent);
     cursor: default;
     color: var(--nord-primary);
@@ -161,7 +160,7 @@ h1::before {
 
 /* Flagged cells */
 .cell-flagged {
-    background: rgba(136, 192, 208, 0.15);
+    background: hsl(190, 45%, 60%, 0.15);  /* var(--nord-primary) with transparency */
     border: 1px solid var(--nord-primary);
     color: var(--nord-primary);
     font-size: 20px;
@@ -169,7 +168,7 @@ h1::before {
 
 /* Revealed mines (not the hit mine) */
 .cell-mine {
-    background: rgba(191, 97, 106, 0.2);  /* Subtle red tint */
+    background: hsl(355, 42.5%, 57.5%, 0.2);  /* var(--nord-red) with transparency */
     border: 1px solid var(--nord-accent);
 }
 
@@ -183,12 +182,6 @@ h1::before {
 /* All numbers and symbols use Nord cyan */
 .cell-revealed:not(:empty) {
     color: var(--nord-primary);
-}
-
-/* Cell base styling */
-.cell {
-    font-family: "Courier New", "Consolas", "Monaco", monospace;
-    font-weight: 700;
 }
 
 /* ========================================
