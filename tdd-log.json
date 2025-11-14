@@ -371,6 +371,15 @@
       "greenTimestamp": "2025-01-13T19:06:33Z",
       "notes": "Added event.preventDefault() to handleContextMenu to prevent browser context menu",
       "status": "passing"
+    },
+    {
+      "id": 42,
+      "module": "InputHandler",
+      "description": "should ignore clicks on non-cell elements (no data-row/data-col attributes)",
+      "redTimestamp": "2025-01-13T19:07:10Z",
+      "greenTimestamp": "2025-01-13T19:07:10Z",
+      "notes": "Already green - handleClick checks for null row/col before calling gameController",
+      "status": "passing"
     }
   ]
 }

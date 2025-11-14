@@ -105,4 +105,19 @@ describe('InputHandler', () => {
 
     expect(preventDefaultSpy).toHaveBeenCalled();
   });
+
+  // Test 42: Should ignore clicks on non-cell elements (no data-row/data-col attributes)
+  it('should ignore clicks on non-cell elements (no data-row/data-col attributes)', () => {
+    new InputHandler(container, mockGameController);
+
+    // Create a non-cell element without data attributes
+    const nonCellElement = document.createElement('div');
+    container.appendChild(nonCellElement);
+
+    // Simulate click on the non-cell element
+    nonCellElement.click();
+
+    // Should not call handleCellClick
+    expect(mockGameController.handleCellClick).not.toHaveBeenCalled();
+  });
 });
