@@ -362,6 +362,15 @@
       "greenTimestamp": "2025-01-13T19:05:43Z",
       "notes": "Implemented handleContextMenu to extract data-row/data-col attributes and call gameController.handleCellRightClick",
       "status": "passing"
+    },
+    {
+      "id": 41,
+      "module": "InputHandler",
+      "description": "should prevent default context menu behavior",
+      "redTimestamp": "2025-01-13T19:06:12Z",
+      "greenTimestamp": "2025-01-13T19:06:33Z",
+      "notes": "Added event.preventDefault() to handleContextMenu to prevent browser context menu",
+      "status": "passing"
     }
   ]
 }

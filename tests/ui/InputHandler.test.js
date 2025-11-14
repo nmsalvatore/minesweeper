@@ -83,4 +83,26 @@ describe('InputHandler', () => {
 
     expect(mockGameController.handleCellRightClick).toHaveBeenCalledWith(1, 4);
   });
+
+  // Test 41: Should prevent default context menu behavior
+  it('should prevent default context menu behavior', () => {
+    new InputHandler(container, mockGameController);
+
+    // Create a cell element
+    const cellElement = document.createElement('div');
+    cellElement.setAttribute('data-row', '0');
+    cellElement.setAttribute('data-col', '0');
+    container.appendChild(cellElement);
+
+    // Simulate right-click (contextmenu event) on the cell
+    const contextMenuEvent = new dom.window.MouseEvent('contextmenu', {
+      bubbles: true,
+      cancelable: true
+    });
+    const preventDefaultSpy = vi.spyOn(contextMenuEvent, 'preventDefault');
+
+    cellElement.dispatchEvent(contextMenuEvent);
+
+    expect(preventDefaultSpy).toHaveBeenCalled();
+  });
 });

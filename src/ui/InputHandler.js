@@ -30,6 +30,8 @@ export class InputHandler {
     const col = target.getAttribute('data-col');
 
     if (row !== null && col !== null) {
+      // Prevent default context menu from appearing
+      event.preventDefault();
       this.gameController.handleCellRightClick(parseInt(row, 10), parseInt(col, 10));
     }
   }
