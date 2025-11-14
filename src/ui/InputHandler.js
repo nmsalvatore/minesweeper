@@ -5,6 +5,9 @@ export class InputHandler {
 
     // Attach click event listener
     this.container.addEventListener('click', this.handleClick.bind(this));
+
+    // Attach contextmenu (right-click) event listener
+    this.container.addEventListener('contextmenu', this.handleContextMenu.bind(this));
   }
 
   handleClick(event) {
@@ -17,5 +20,9 @@ export class InputHandler {
     if (row !== null && col !== null) {
       this.gameController.handleCellClick(parseInt(row, 10), parseInt(col, 10));
     }
+  }
+
+  handleContextMenu(event) {
+    // Will implement right-click logic in next test
   }
 }

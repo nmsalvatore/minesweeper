@@ -54,4 +54,13 @@ describe('InputHandler', () => {
 
     expect(mockGameController.handleCellClick).toHaveBeenCalledWith(2, 3);
   });
+
+  // Test 39: Should attach contextmenu event listener to container
+  it('should attach contextmenu event listener to container', () => {
+    const addEventListenerSpy = vi.spyOn(container, 'addEventListener');
+
+    new InputHandler(container, mockGameController);
+
+    expect(addEventListenerSpy).toHaveBeenCalledWith('contextmenu', expect.any(Function));
+  });
 });
